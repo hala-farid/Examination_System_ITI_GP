@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OLTP_Source"
+  DTS:DTSID="{6EE0371B-053B-4481-87BF-5336CEE10A66}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=SANDRA;Initial Catalog=Exam_System_OLTP;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Application Name=SSIS-Exam_System_DWH-{6EE0371B-053B-4481-87BF-5336CEE10A66}SANDRA.Exam_System_OLTP;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,3012 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/19/2024 3:12:33 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SANDRA"
+  DTS:CreatorName="Sandra\sandr"
+  DTS:DTSID="{74D67D26-E1B3-45E3-B2A8-DE60CC5B4DB6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{175FFC13-0DCD-4176-9D94-D0C0090AE5C6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Dim_Instructors"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0A307E95-27CA-44C8-8D70-FB4AE14EA51B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Dim_Instructors"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Dim_Instructors\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Dim_Instructors\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Derived Column.Outputs[Derived Column Output].Columns[end_date]"
+                      dataType="dbTimeStamp"
+                      description="end_date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Dim_Instructors\Derived Column.Outputs[Derived Column Output].Columns[end_date]"
+                      name="end_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Dim_Instructors\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Dim_Instructors\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Output].Columns[start_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Output].Columns[start_date]"
+                      name="start_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Output].Columns[is_current]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Output].Columns[is_current]"
+                      name="is_current"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(dt_ui1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(dt_ui1)1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Dim_Instructors\DRV_system_source_code"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DRV_system_source_code"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Dim_Instructors\DRV_system_source_code.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\DRV_system_source_code.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Output].Columns[system_source_code]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Output].Columns[system_source_code]"
+                      name="system_source_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(dt_ui1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(dt_ui1)1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\DRV_system_source_code.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Dim_Instructors\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Instructors]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Dim_Instructors\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SANDRA.Exam_System_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_ID]"
+                      cachedDataType="i4"
+                      cachedName="Inst_ID"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_ID_BK]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_ID]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_Fname]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Inst_Fname"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Fname]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Fname]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_Lname]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Lname"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Lname]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Lname]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_Salary]"
+                      cachedDataType="cy"
+                      cachedName="Inst_Salary"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Salary]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Salary]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_Gender]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Gender"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Gender]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Gender]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_Birthdate]"
+                      cachedDataType="dbDate"
+                      cachedName="Inst_Birthdate"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Birthdate]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Birthdate]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_HiringDate]"
+                      cachedDataType="dbDate"
+                      cachedName="Inst_HiringDate"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_HiringDate]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_HiringDate]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_Position]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Position"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Position]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Position]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_Degree]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Degree"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Degree]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Degree]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_Experience_Year]"
+                      cachedDataType="i4"
+                      cachedName="Inst_Experience_Year"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Experience_Year]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Experience_Year]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Inst_Email]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Inst_Email"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Email]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Email]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Phone]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone_BK]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Phone]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Manager_ID]"
+                      cachedDataType="i4"
+                      cachedName="Manager_ID"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Manager_ID]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Manager_ID]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Branch_ID]"
+                      cachedDataType="i4"
+                      cachedName="Branch_ID"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Branch_ID_FK]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Branch_ID]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[ZipCode]"
+                      cachedDataType="i4"
+                      cachedName="ZipCode"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZipCode_BK]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[ZipCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[City]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[City]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[Street]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Street"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Street]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[start_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="start_date"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[start_date]"
+                      lineageId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Output].Columns[start_date]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[system_source_code]"
+                      cachedDataType="ui1"
+                      cachedName="system_source_code"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[source_system_code]"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[system_source_code]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].Columns[is_current]"
+                      cachedDataType="ui1"
+                      cachedName="is_current"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[is_current]"
+                      lineageId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Output].Columns[is_current]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_ID_SK]"
+                      dataType="i4"
+                      name="Inst_ID_SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_ID_BK]"
+                      dataType="i4"
+                      name="Inst_ID_BK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Fname]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="Inst_Fname" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Lname]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Lname" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Salary]"
+                      dataType="cy"
+                      name="Inst_Salary" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Gender]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Birthdate]"
+                      dataType="dbDate"
+                      name="Inst_Birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Age]"
+                      dataType="i4"
+                      name="Inst_Age" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_HiringDate]"
+                      dataType="dbDate"
+                      name="Inst_HiringDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Position]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Position" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Degree]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Degree" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Experience_Year]"
+                      dataType="i4"
+                      name="Inst_Experience_Year" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Inst_Email]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="Inst_Email" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone_BK]"
+                      codePage="1256"
+                      dataType="str"
+                      length="20"
+                      name="Phone_BK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Manager_ID]"
+                      dataType="i4"
+                      name="Manager_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Branch_ID_FK]"
+                      dataType="i4"
+                      name="Branch_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZipCode_BK]"
+                      dataType="i4"
+                      name="ZipCode_BK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="Street" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[start_date]"
+                      dataType="dbTimeStamp"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[end_date]"
+                      dataType="dbTimeStamp"
+                      name="end_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[is_current]"
+                      dataType="ui1"
+                      name="is_current" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[source_system_code]"
+                      dataType="ui1"
+                      name="source_system_code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Dim_Instructors\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Instructors] SET [end_date] = ? 
+
+,is_current=0
+WHERE [Inst_ID_BK] = ? AND [ZipCode_BK] = ? AND [end_date] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Dim_Instructors\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SANDRA.Exam_System_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input].Columns[Inst_ID]"
+                      cachedDataType="i4"
+                      cachedName="Inst_ID"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_ID]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input].Columns[ZipCode]"
+                      cachedDataType="i4"
+                      cachedName="ZipCode"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[ZipCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input].Columns[end_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="end_date"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT_Dim_Instructors\Derived Column.Outputs[Derived Column Output].Columns[end_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_Instructors\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Dim_Instructors\OLE DB Command 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Instructors] SET [Inst_Experience_Year] = ? WHERE [Inst_ID_BK] = ? AND [ZipCode_BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Connections[OleDbConnection]"
+                  connectionManagerID="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SANDRA.Exam_System_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Inst_Experience_Year]"
+                      cachedDataType="i4"
+                      cachedName="Inst_Experience_Year"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Experience_Year]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Inst_ID]"
+                      cachedDataType="i4"
+                      cachedName="Inst_ID"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_ID]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ZipCode]"
+                      cachedDataType="i4"
+                      cachedName="ZipCode"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[ZipCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Branch_ID_FK], [City], [Inst_Birthdate], [Inst_Degree], [Inst_Email], [Inst_Experience_Year], [Inst_Fname], [Inst_Gender], [Inst_HiringDate], [Inst_ID_BK], [Inst_Lname], [Inst_Position], [Inst_Salary], [Manager_ID], [Phone_BK], [source_system_code], [Street], [ZipCode_BK],[start_date],[end_date] FROM [dbo].[Dim_Instructors]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere">[start_date] IS NOT NULL AND [end_date] IS NULL</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SANDRA.Exam_System_DWH]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Branch_ID]"
+                      cachedDataType="i4"
+                      cachedName="Branch_ID"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Branch_ID_FK]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Branch_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[City]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[City]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_Birthdate]"
+                      cachedDataType="dbDate"
+                      cachedName="Inst_Birthdate"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Birthdate]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Birthdate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_Degree]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Degree"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Degree]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Degree]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_Email]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Inst_Email"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Email]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Email]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_Experience_Year]"
+                      cachedDataType="i4"
+                      cachedName="Inst_Experience_Year"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Experience_Year]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Experience_Year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_Fname]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Inst_Fname"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Fname]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Fname]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_Gender]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Gender"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Gender]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Gender]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_HiringDate]"
+                      cachedDataType="dbDate"
+                      cachedName="Inst_HiringDate"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_HiringDate]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_HiringDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_ID]"
+                      cachedDataType="i4"
+                      cachedName="Inst_ID"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_ID_BK]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_Lname]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Lname"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Lname]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Lname]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_Position]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Position"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Position]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Position]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Inst_Salary]"
+                      cachedDataType="cy"
+                      cachedName="Inst_Salary"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Salary]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Salary]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Manager_ID]"
+                      cachedDataType="i4"
+                      cachedName="Manager_ID"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Manager_ID]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Manager_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Phone]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Phone_BK]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Phone]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[system_source_code]"
+                      cachedDataType="ui1"
+                      cachedName="system_source_code"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[source_system_code]"
+                      lineageId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Output].Columns[system_source_code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Street]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Street"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Street]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Street]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ZipCode]"
+                      cachedDataType="i4"
+                      cachedName="ZipCode"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ZipCode_BK]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[ZipCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Branch_ID_FK]"
+                      dataType="i4"
+                      name="Branch_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Birthdate]"
+                      dataType="dbDate"
+                      name="Inst_Birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Degree]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Degree" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Email]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="Inst_Email" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Experience_Year]"
+                      dataType="i4"
+                      name="Inst_Experience_Year" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Fname]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="Inst_Fname" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Gender]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_HiringDate]"
+                      dataType="dbDate"
+                      name="Inst_HiringDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_ID_BK]"
+                      dataType="i4"
+                      name="Inst_ID_BK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Lname]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Lname" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Position]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Position" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Inst_Salary]"
+                      dataType="cy"
+                      name="Inst_Salary" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Manager_ID]"
+                      dataType="i4"
+                      name="Manager_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Phone_BK]"
+                      codePage="1256"
+                      dataType="str"
+                      length="20"
+                      name="Phone_BK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[source_system_code]"
+                      dataType="ui1"
+                      name="source_system_code" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Street]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="Street" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ZipCode_BK]"
+                      dataType="i4"
+                      name="ZipCode_BK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[start_date]"
+                      dataType="dbTimeStamp"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[end_date]"
+                      dataType="dbTimeStamp"
+                      name="end_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Dim_Instructors\SRC_Instructors"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC_Instructors"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT i.[Inst_ID]
+      ,i.[Inst_Fname]
+      ,i.[Inst_Lname]
+	  ,i.[Inst_Salary]
+	  ,i.[Inst_Gender]
+	  ,i.[Inst_Birthdate]
+	  ,i.[Inst_HiringDate]
+	  ,i.[Inst_Position]
+	  ,i.[Inst_Degree]
+	  ,i.[Inst_Experience_Year]
+	  ,i.[Inst_Email]
+	  ,i.[Manager_ID]
+	  ,i.[Branch_ID]
+	  ,p.[Phone]
+	  ,z.[ZipCode]
+	  ,z.[City]
+	  ,z.[Street]
+	  
+  FROM [Exam_System_OLTP].[dbo].[Instructors] as i
+
+  left join [Exam_System_OLTP].[dbo].[Instructor_Phone] as p
+  on(i.Inst_ID=p.Inst_ID)
+
+  left join [Exam_System_OLTP].[dbo].[Instructor_address] as z
+  on(i.ZipCode=z.ZipCode)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Dim_Instructors\SRC_Instructors.Connections[OleDbConnection]"
+                  connectionManagerID="{6EE0371B-053B-4481-87BF-5336CEE10A66}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP_Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_ID]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_ID]"
+                      name="Inst_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Fname]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Fname]"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Fname]"
+                      name="Inst_Fname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Lname]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Lname]"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Lname]"
+                      name="Inst_Lname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Salary]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Salary]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Salary]"
+                      name="Inst_Salary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Gender]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Gender]"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Gender]"
+                      name="Inst_Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Birthdate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Birthdate]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Birthdate]"
+                      name="Inst_Birthdate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_HiringDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_HiringDate]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_HiringDate]"
+                      name="Inst_HiringDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Position]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Position]"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Position]"
+                      name="Inst_Position"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Degree]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Degree]"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Degree]"
+                      name="Inst_Degree"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Experience_Year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Experience_Year]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Experience_Year]"
+                      name="Inst_Experience_Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Email]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Email]"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Email]"
+                      name="Inst_Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Manager_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Manager_ID]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Manager_ID]"
+                      name="Manager_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Branch_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Branch_ID]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Branch_ID]"
+                      name="Branch_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Phone]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      length="20"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[ZipCode]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[ZipCode]"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[ZipCode]"
+                      name="ZipCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[City]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Street]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Street]"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Street]"
+                      name="Street"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_ID]"
+                      dataType="i4"
+                      name="Inst_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Fname]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="Inst_Fname" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Lname]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Lname" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Salary]"
+                      dataType="cy"
+                      name="Inst_Salary" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Gender]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Birthdate]"
+                      dataType="dbDate"
+                      name="Inst_Birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_HiringDate]"
+                      dataType="dbDate"
+                      name="Inst_HiringDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Position]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Position" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Degree]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Inst_Degree" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Experience_Year]"
+                      dataType="i4"
+                      name="Inst_Experience_Year" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Inst_Email]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="Inst_Email" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Manager_ID]"
+                      dataType="i4"
+                      name="Manager_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Branch_ID]"
+                      dataType="i4"
+                      name="Branch_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      codePage="1256"
+                      dataType="str"
+                      length="20"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[ZipCode]"
+                      dataType="i4"
+                      name="ZipCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].ExternalColumns[Street]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      name="Street" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_ID]"
+                      name="Inst_ID" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Fname]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Fname]"
+                      name="Inst_Fname" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Lname]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Lname]"
+                      name="Inst_Lname" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Salary]"
+                      dataType="cy"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Salary]"
+                      name="Inst_Salary" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Gender]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Gender]"
+                      name="Inst_Gender" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Birthdate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Birthdate]"
+                      name="Inst_Birthdate" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_HiringDate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_HiringDate]"
+                      name="Inst_HiringDate" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Position]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Position]"
+                      name="Inst_Position" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Degree]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Degree]"
+                      name="Inst_Degree" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Experience_Year]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Experience_Year]"
+                      name="Inst_Experience_Year" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Email]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Inst_Email]"
+                      name="Inst_Email" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Manager_ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Manager_ID]"
+                      name="Manager_ID" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Branch_ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Branch_ID]"
+                      name="Branch_ID" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      codePage="1256"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[ZipCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[ZipCode]"
+                      name="ZipCode" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[City]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Street]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[Street]"
+                      name="Street" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Dim_Instructors\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_ID]"
+                      cachedDataType="i4"
+                      cachedName="Inst_ID"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_Fname]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Inst_Fname"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Fname]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Fname]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_Lname]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Lname"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Lname]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Lname]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_Salary]"
+                      cachedDataType="cy"
+                      cachedName="Inst_Salary"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Salary]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Salary]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_Gender]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Gender"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Gender]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Gender]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_Birthdate]"
+                      cachedDataType="dbDate"
+                      cachedName="Inst_Birthdate"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Birthdate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Birthdate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_HiringDate]"
+                      cachedDataType="dbDate"
+                      cachedName="Inst_HiringDate"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_HiringDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_HiringDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_Position]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Position"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Position]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Position]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_Degree]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Degree"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Degree]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Degree]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_Experience_Year]"
+                      cachedDataType="i4"
+                      cachedName="Inst_Experience_Year"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Experience_Year]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Experience_Year]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Inst_Email]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Inst_Email"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Email]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Email]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Manager_ID]"
+                      cachedDataType="i4"
+                      cachedName="Manager_ID"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Manager_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Manager_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Branch_ID]"
+                      cachedDataType="i4"
+                      cachedName="Branch_ID"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Branch_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Branch_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Phone]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Phone]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Phone]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[ZipCode]"
+                      cachedDataType="i4"
+                      cachedName="ZipCode"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[ZipCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[ZipCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[City]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="City"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[Street]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Street"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Street]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Street]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1].Columns[system_source_code]"
+                      cachedDataType="ui1"
+                      cachedName="system_source_code"
+                      lineageId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Output].Columns[system_source_code]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[system_source_code]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_ID]"
+                      cachedDataType="i4"
+                      cachedName="Inst_ID"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_Fname]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Inst_Fname"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Fname]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Fname]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_Lname]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Lname"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Lname]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Lname]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_Salary]"
+                      cachedDataType="cy"
+                      cachedName="Inst_Salary"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Salary]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Salary]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_Gender]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Gender"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Gender]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Gender]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_Birthdate]"
+                      cachedDataType="dbDate"
+                      cachedName="Inst_Birthdate"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Birthdate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Birthdate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_HiringDate]"
+                      cachedDataType="dbDate"
+                      cachedName="Inst_HiringDate"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_HiringDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_HiringDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_Position]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Position"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Position]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Position]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_Degree]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Inst_Degree"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Degree]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Degree]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_Experience_Year]"
+                      cachedDataType="i4"
+                      cachedName="Inst_Experience_Year"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Experience_Year]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Experience_Year]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Inst_Email]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Inst_Email"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Email]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Email]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Manager_ID]"
+                      cachedDataType="i4"
+                      cachedName="Manager_ID"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Manager_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Manager_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Branch_ID]"
+                      cachedDataType="i4"
+                      cachedName="Branch_ID"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Branch_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Branch_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Phone]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Phone]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Phone]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[ZipCode]"
+                      cachedDataType="i4"
+                      cachedName="ZipCode"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[ZipCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[ZipCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[City]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="City"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[Street]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="Street"
+                      lineageId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output].Columns[Street]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Street]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2].Columns[system_source_code]"
+                      cachedDataType="ui1"
+                      cachedName="system_source_code"
+                      lineageId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Output].Columns[system_source_code]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[system_source_code]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_ID]"
+                      name="Inst_ID" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Fname]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Fname]"
+                      name="Inst_Fname" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Lname]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Lname]"
+                      name="Inst_Lname" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Salary]"
+                      dataType="cy"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Salary]"
+                      name="Inst_Salary" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Gender]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Gender]"
+                      name="Inst_Gender" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Birthdate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Birthdate]"
+                      name="Inst_Birthdate" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_HiringDate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_HiringDate]"
+                      name="Inst_HiringDate" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Position]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Position]"
+                      name="Inst_Position" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Degree]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Degree]"
+                      name="Inst_Degree" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Experience_Year]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Experience_Year]"
+                      name="Inst_Experience_Year" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Email]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Inst_Email]"
+                      name="Inst_Email" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Manager_ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Manager_ID]"
+                      name="Manager_ID" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Branch_ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Branch_ID]"
+                      name="Branch_ID" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Phone]"
+                      codePage="1256"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[ZipCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[ZipCode]"
+                      name="ZipCode" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[City]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Street]"
+                      codePage="1256"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[Street]"
+                      name="Street" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[system_source_code]"
+                      dataType="ui1"
+                      lineageId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1].Columns[system_source_code]"
+                      name="system_source_code" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Dim_Instructors.Paths[Changing Attribute Updates Output]"
+              endId="Package\DFT_Dim_Instructors\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\DFT_Dim_Instructors.Paths[Derived Column Output]"
+              endId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Dim_Instructors\DRV_system_source_code.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Dim_Instructors.Paths[Derived Column Output1]"
+              endId="Package\DFT_Dim_Instructors\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Dim_Instructors\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Dim_Instructors.Paths[Derived Column Output2]"
+              endId="Package\DFT_Dim_Instructors\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Dim_Instructors\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Dim_Instructors.Paths[Historical Attribute Inserts Output]"
+              endId="Package\DFT_Dim_Instructors\Derived Column.Inputs[Derived Column Input]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
+              refId="Package\DFT_Dim_Instructors.Paths[New Output]"
+              endId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 1]"
+              name="New Output"
+              startId="Package\DFT_Dim_Instructors\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\DFT_Dim_Instructors.Paths[OLE DB Command Output]"
+              endId="Package\DFT_Dim_Instructors\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\DFT_Dim_Instructors\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\DFT_Dim_Instructors.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Dim_Instructors\DRV_system_source_code.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Dim_Instructors\SRC_Instructors.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT_Dim_Instructors.Paths[Union All Output 1]"
+              endId="Package\DFT_Dim_Instructors\Derived Column 1.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\DFT_Dim_Instructors\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\DFT_Dim_Instructors"
+          TopLeft="330.71428641829,63.4705881796597" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Dim_Instructors">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DFT_Dim_Instructors\Insert Destination"
+          TopLeft="149.7,716.699999999999" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\DFT_Dim_Instructors\Union All"
+          TopLeft="170.9,513.5" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DFT_Dim_Instructors\Derived Column 1"
+          TopLeft="149.7,615.099999999999" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\DFT_Dim_Instructors\OLE DB Command 1"
+          TopLeft="291.7,310.3" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DFT_Dim_Instructors\OLE DB Command"
+          TopLeft="5.50000000000003,411.9" />
+        <NodeLayout
+          Size="202.4,41.6"
+          Id="Package\DFT_Dim_Instructors\DRV_system_source_code"
+          TopLeft="129.7,107.1" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\DFT_Dim_Instructors\Slowly Changing Dimension"
+          TopLeft="126.9,208.7" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\DFT_Dim_Instructors\Derived Column"
+          TopLeft="17.5,310.3" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\DFT_Dim_Instructors\SRC_Instructors"
+          TopLeft="153.7,5.49999999999995" />
+        <EdgeLayout
+          Id="Package\DFT_Dim_Instructors.Paths[Union All Output 1]"
+          TopLeft="230.9,555.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Dim_Instructors.Paths[OLE DB Source Output]"
+          TopLeft="230.9,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Dim_Instructors.Paths[OLE DB Command Output]"
+          TopLeft="87.9,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.333333333333,59.9999999999999"
+              Start="0,0"
+              End="124.333333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5263157894736"
+                    Point2="0,35.5263157894736"
+                    Point3="4,35.5263157894736" />
+                  <mssgle:LineSegment
+                    End="120.333333333333,35.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.333333333333,35.5263157894736"
+                    Point2="124.333333333333,35.5263157894736"
+                    Point3="124.333333333333,39.5263157894736" />
+                  <mssgle:LineSegment
+                    End="124.333333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Dim_Instructors.Paths[New Output]"
+          TopLeft="230.9,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.6666666666667,263.2"
+              Start="0,0"
+              End="18.6666666666667,255.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,151.842105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,151.842105263158"
+                    Point2="0,155.842105263158"
+                    Point3="4,155.842105263158" />
+                  <mssgle:LineSegment
+                    End="14.6666666666667,155.842105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.6666666666667,155.842105263158"
+                    Point2="18.6666666666667,155.842105263158"
+                    Point3="18.6666666666667,159.842105263158" />
+                  <mssgle:LineSegment
+                    End="18.6666666666667,255.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.7580533854167,160.842105263158,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Dim_Instructors.Paths[Historical Attribute Inserts Output]"
+          TopLeft="180.9,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87,59.9999999999999"
+              Start="0,0"
+              End="-87,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="-4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="-83,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83,20.506329113924"
+                    Point2="-87,20.506329113924"
+                    Point3="-87,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="-87,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.55638671875,25.506329113924,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Dim_Instructors.Paths[Derived Column Output2]"
+          TopLeft="230.9,656.699999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Dim_Instructors.Paths[Derived Column Output1]"
+          TopLeft="90.9,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Dim_Instructors.Paths[Derived Column Output]"
+          TopLeft="230.9,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Dim_Instructors.Paths[Changing Attribute Updates Output]"
+          TopLeft="280.9,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98,59.9999999999999"
+              Start="0,0"
+              End="98,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="94,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94,20.506329113924"
+                    Point2="98,20.506329113924"
+                    Point3="98,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="98,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-29.53390625,25.506329113924,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Dim_Instructors\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Dim_Instructors\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dim_Instructors]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Branch_ID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Branch_ID_FK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[City]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;City&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Birthdate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_Birthdate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Degree]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_Degree&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Email]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_Email&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Experience_Year]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_Experience_Year&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Fname]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_Fname&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Gender]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_Gender&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_HiringDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_HiringDate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_ID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_ID_BK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Lname]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_Lname&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Position]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_Position&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Inst_Salary]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Inst_Salary&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Manager_ID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Manager_ID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Phone]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Phone_BK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;DRV_system_source_code.Outputs[Derived Column Output].Columns[system_source_code]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;source_system_code&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[Street]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Street&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC_Instructors.Outputs[OLE DB Source Output].Columns[ZipCode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ZipCode_BK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;start_date&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;end_date&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Dim_Instructors\SRC_Instructors">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

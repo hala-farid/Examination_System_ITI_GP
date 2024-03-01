@@ -1,0 +1,2132 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/19/2024 6:02:50 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SANDRA"
+  DTS:CreatorName="Sandra\sandr"
+  DTS:DTSID="{EB69D3FE-03E7-4B81-8199-8AA6B60CC8EB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{E6C6CDD0-B3F0-4FBA-AAD9-2194336AD4DD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8570912E-6C7C-41A0-9999-CB5E0FD27723}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Last_load_date">
+      <DTS:VariableValue
+        DTS:DataType="7">12/31/2099</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{248FFF79-96F0-4131-9935-6FC82435722D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Last_Load_ExamsID_BK">
+      <DTS:VariableValue
+        DTS:DataType="21">1000000000000000000</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{748EDBA6-FF65-4415-899C-66B4981213D3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="update_last_load_Exam_ID">
+      <DTS:VariableValue
+        DTS:DataType="20">100000000000000000</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Fact_Students"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{74EF9395-842F-4FFE-BEB5-3286B0CF431A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Fact_Students"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Fact_Students\DRV_Source_system_code"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DRV_Source_system_code"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Students\DRV_Source_system_code.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Students\DRV_Source_system_code.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Fact_Students\DRV_Source_system_code.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\DRV_Source_system_code.Outputs[Derived Column Output].Columns[source_system_code]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Fact_Students\DRV_Source_system_code.Outputs[Derived Column Output].Columns[source_system_code]"
+                      name="source_system_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(dt_ui1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(dt_ui1)1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\DRV_Source_system_code.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Fact_Students\DRV_Source_system_code.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\DRV_Source_system_code.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\DRV_Source_system_code.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\DRV_Source_system_code.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\DRV_Source_system_code.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Students\DWH_Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DWH_Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_Students]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Fact_Students\DWH_Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SANDRA.Exam_System_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].Columns[Total_Grade]"
+                      cachedDataType="numeric"
+                      cachedName="Total_Grade"
+                      cachedPrecision="38"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[Total_Grade]"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Total_Grade]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].Columns[StudentID_SK]"
+                      cachedDataType="i4"
+                      cachedName="StudentID_SK"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentID_FK]"
+                      lineageId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup Match Output].Columns[StudentID_SK]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].Columns[Track_ID_SK]"
+                      cachedDataType="i4"
+                      cachedName="Track_ID_SK"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[Track_ID_FK]"
+                      lineageId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup Match Output].Columns[Track_ID_SK]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].Columns[Branch_ID_SK]"
+                      cachedDataType="i4"
+                      cachedName="Branch_ID_SK"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[Branch_ID_FK]"
+                      lineageId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup Match Output].Columns[Branch_ID_SK]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].Columns[Exam_ID_SK]"
+                      cachedDataType="i4"
+                      cachedName="Exam_ID_SK"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[Exam_ID_FK]"
+                      lineageId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup Match Output].Columns[Exam_ID_SK]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].Columns[DateSK]"
+                      cachedDataType="i4"
+                      cachedName="DateSK"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateFK]"
+                      lineageId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup Match Output].Columns[DateSK]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].Columns[source_system_code]"
+                      cachedDataType="ui1"
+                      cachedName="source_system_code"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[source_system_code]"
+                      lineageId="Package\DFT_Fact_Students\DRV_Source_system_code.Outputs[Derived Column Output].Columns[source_system_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fact_Transaction_PK_SK]"
+                      dataType="i4"
+                      name="Fact_Transaction_PK_SK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentID_FK]"
+                      dataType="i4"
+                      name="StudentID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[Track_ID_FK]"
+                      dataType="i4"
+                      name="Track_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[Branch_ID_FK]"
+                      dataType="i4"
+                      name="Branch_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[Exam_ID_FK]"
+                      dataType="i4"
+                      name="Exam_ID_FK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateFK]"
+                      dataType="i4"
+                      name="DateFK" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[Total_Grade]"
+                      dataType="numeric"
+                      name="Total_Grade"
+                      precision="10"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[create_at]"
+                      dataType="dbTimeStamp"
+                      name="create_at" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input].ExternalColumns[source_system_code]"
+                      dataType="ui1"
+                      name="source_system_code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Students\DWH_Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\DWH_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\DWH_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\DWH_Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Students\LKP_Branches"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_Branches"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Branch_ID_SK]
+      ,[Branch_ID_BK]
+      
+  FROM [Exam_System_DWH].[dbo].[Dim_Branches]
+  WHERE is_current = 1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [Branch_ID_SK]
+      ,[Branch_ID_BK]
+      
+  FROM [Exam_System_DWH].[dbo].[Dim_Branches]
+  WHERE is_current = 1) [refTable]
+where [refTable].[Branch_ID_BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Branch_ID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Branch_ID_BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Branch_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Fact_Students\LKP_Branches.Connections[OleDbConnection]"
+                  connectionManagerID="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SANDRA.Exam_System_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Students\LKP_Branches.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Branches.Inputs[Lookup Input].Columns[Branch_ID]"
+                      cachedDataType="i4"
+                      cachedName="Branch_ID"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Branch_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Branch_ID_BK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Branches.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup Match Output].Columns[Branch_ID_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup Match Output].Columns[Branch_ID_SK]"
+                      name="Branch_ID_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Branch_ID_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Branches.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Branches.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Students\LKP_DateSK"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_DateSK"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  DateSK, [Date]
+FROM    DimDate</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT  DateSK, [Date]
+FROM    DimDate) [refTable]
+where [refTable].[Date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateSK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Exam_Date]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Fact_Students\LKP_DateSK.Connections[OleDbConnection]"
+                  connectionManagerID="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SANDRA.Exam_System_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Students\LKP_DateSK.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\LKP_DateSK.Inputs[Lookup Input].Columns[Exam_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Exam_Date"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Exam_Date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_DateSK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup Match Output].Columns[DateSK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup Match Output].Columns[DateSK]"
+                      name="DateSK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DateSK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_DateSK.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_DateSK.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Students\LKP_Exams"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_Exams"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Exam_ID_SK]
+      ,[Exam_ID_BK]
+      
+  FROM [Exam_System_DWH].[dbo].[Dim_Exams]
+  WHERE is_current = 1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [Exam_ID_SK]
+      ,[Exam_ID_BK]
+      
+  FROM [Exam_System_DWH].[dbo].[Dim_Exams]
+  WHERE is_current = 1) [refTable]
+where [refTable].[Exam_ID_BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Exam_ID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Exam_ID_BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Exam_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Fact_Students\LKP_Exams.Connections[OleDbConnection]"
+                  connectionManagerID="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SANDRA.Exam_System_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Students\LKP_Exams.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Exams.Inputs[Lookup Input].Columns[Exam_ID]"
+                      cachedDataType="i4"
+                      cachedName="Exam_ID"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Exam_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Exam_ID_BK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Exams.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup Match Output].Columns[Exam_ID_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup Match Output].Columns[Exam_ID_SK]"
+                      name="Exam_ID_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Exam_ID_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Exams.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Exams.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Students\LKP_Students"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_Students"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [StudentID_SK]
+      ,[StudentID_BK]
+      
+  FROM [Exam_System_DWH].[dbo].[Dim_Students]
+  WHERE is_current = 1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [StudentID_SK]
+      ,[StudentID_BK]
+      
+  FROM [Exam_System_DWH].[dbo].[Dim_Students]
+  WHERE is_current = 1) [refTable]
+where [refTable].[StudentID_BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StudentID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StudentID_BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[St_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Fact_Students\LKP_Students.Connections[OleDbConnection]"
+                  connectionManagerID="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SANDRA.Exam_System_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Students\LKP_Students.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Students.Inputs[Lookup Input].Columns[St_ID]"
+                      cachedDataType="i4"
+                      cachedName="St_ID"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[St_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">StudentID_BK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Students.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup Match Output].Columns[StudentID_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup Match Output].Columns[StudentID_SK]"
+                      name="StudentID_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">StudentID_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Students.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Students.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Students\LKP_Tracks"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP_Tracks"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Track_ID_SK]
+      ,[Track_ID_BK]
+      
+  FROM [Exam_System_DWH].[dbo].[Dim_Tracks]
+  WHERE is_current = 1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [Track_ID_SK]
+      ,[Track_ID_BK]
+      
+  FROM [Exam_System_DWH].[dbo].[Dim_Tracks]
+  WHERE is_current = 1) [refTable]
+where [refTable].[Track_ID_BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Track_ID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Track_ID_BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Track_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Fact_Students\LKP_Tracks.Connections[OleDbConnection]"
+                  connectionManagerID="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SANDRA.Exam_System_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Students\LKP_Tracks.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Tracks.Inputs[Lookup Input].Columns[Track_ID]"
+                      cachedDataType="i4"
+                      cachedName="Track_ID"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Track_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Track_ID_BK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Tracks.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup Match Output].Columns[Track_ID_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup Match Output].Columns[Track_ID_SK]"
+                      name="Track_ID_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Track_ID_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Tracks.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT_Fact_Students\LKP_Tracks.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Students\SRC_student"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC_student"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+       s.[St_ID]
+	   ,s.[Branch_ID]
+	   ,s.[Track_ID]
+	   ,te.[Exam_ID]
+	   ,e.[Exam_Date]
+	   ,SUM(te.[Exam_Percentage]) AS Total_Grade
+	  
+FROM [Exam_System_OLTP].[dbo].[StudentsInfo] as s
+INNER JOIN [Exam_System_OLTP].[dbo].[Student_Takes_Exam] as te
+ON s.St_ID = te.St_ID
+INNER JOIN [Exam_System_OLTP].[dbo].[Exams] as e
+ON te.Exam_ID = e.Exam_ID
+
+WHERE te.[Exam_ID] &gt; ?  
+and e.[Exam_Date] &gt;=  ?
+ and e.[Exam_Date]&lt; ?
+
+GROUP BY s.St_ID, s.Branch_ID, s.Track_ID, te.Exam_ID, e.Exam_Date;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{248FFF79-96F0-4131-9935-6FC82435722D};"Parameter1:Input",{8570912E-6C7C-41A0-9999-CB5E0FD27723};"Parameter2:Input",System::StartTime;</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Fact_Students\SRC_student.Connections[OleDbConnection]"
+                  connectionManagerID="{6EE0371B-053B-4481-87BF-5336CEE10A66}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP_Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[St_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[St_ID]"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[St_ID]"
+                      name="St_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Branch_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[Branch_ID]"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Branch_ID]"
+                      name="Branch_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Track_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[Track_ID]"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Track_ID]"
+                      name="Track_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Exam_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[Exam_ID]"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Exam_ID]"
+                      name="Exam_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Exam_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[Exam_Date]"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Exam_Date]"
+                      name="Exam_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Total_Grade]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[Total_Grade]"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].Columns[Total_Grade]"
+                      name="Total_Grade"
+                      precision="38"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[St_ID]"
+                      dataType="i4"
+                      name="St_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[Branch_ID]"
+                      dataType="i4"
+                      name="Branch_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[Track_ID]"
+                      dataType="i4"
+                      name="Track_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[Exam_ID]"
+                      dataType="i4"
+                      name="Exam_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[Exam_Date]"
+                      dataType="dbDate"
+                      name="Exam_Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output].ExternalColumns[Total_Grade]"
+                      dataType="numeric"
+                      name="Total_Grade"
+                      precision="38"
+                      scale="1" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[St_ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[St_ID]"
+                      name="St_ID" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[Branch_ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[Branch_ID]"
+                      name="Branch_ID" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[Track_ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[Track_ID]"
+                      name="Track_ID" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[Exam_ID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[Exam_ID]"
+                      name="Exam_ID" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[Exam_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[Exam_Date]"
+                      name="Exam_Date" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[Total_Grade]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[Total_Grade]"
+                      name="Total_Grade"
+                      precision="38"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Fact_Students.Paths[Derived Column Output]"
+              endId="Package\DFT_Fact_Students\LKP_DateSK.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Fact_Students\DRV_Source_system_code.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT_Fact_Students.Paths[Lookup Match Output]"
+              endId="Package\DFT_Fact_Students\LKP_Students.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Fact_Students\LKP_DateSK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Fact_Students.Paths[Lookup Match Output1]"
+              endId="Package\DFT_Fact_Students\LKP_Branches.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Fact_Students\LKP_Students.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Fact_Students.Paths[Lookup Match Output2]"
+              endId="Package\DFT_Fact_Students\LKP_Tracks.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Fact_Students\LKP_Branches.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Fact_Students.Paths[Lookup Match Output3]"
+              endId="Package\DFT_Fact_Students\LKP_Exams.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Fact_Students\LKP_Tracks.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Fact_Students.Paths[Lookup Match Output4]"
+              endId="Package\DFT_Fact_Students\DWH_Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT_Fact_Students\LKP_Exams.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT_Fact_Students.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Fact_Students\DRV_Source_system_code.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Fact_Students\SRC_student.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_Last_Load_Date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F63EADA5-3E3A-4129-A9F3-382A42C4D38F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_Last_Load_Date"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}"
+          SQLTask:SqlStatementSource="SELECT  Last_load_date&#xA;     &#xA;  FROM [Exam_System_DWH].[dbo].[Meta_Control_Fact_Students_Load]&#xA;  where [ExamsID]='Exam_ID'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="Last_load_date"
+            SQLTask:DtsVariableName="User::Last_load_date" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_Last_Load_Exam_ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1120252D-67E2-48AA-822E-12F44437E4CA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_Last_Load_Exam_ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}"
+          SQLTask:SqlStatementSource="SELECT  &#xA;      [Last_Load_ExamsID_BK]&#xA;  FROM [Exam_System_DWH].[dbo].[Meta_Control_Fact_Students_Load]&#xA;  where [ExamsID]='Exam_ID'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="Last_Load_ExamsID_BK"
+            SQLTask:DtsVariableName="User::Last_Load_ExamsID_BK" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_Update_Exam_Date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0451ADE8-CAD9-4C0D-8906-4DD0DEC8B93D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_Update_Exam_Date"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}"
+          SQLTask:SqlStatementSource="update [dbo].[Meta_Control_Fact_Students_Load]&#xA;set [Last_load_date]=?&#xA;,[Last_Load_ExamsID_BK]=?&#xA;&#xA;where [ExamsID]='Exam_ID'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::StartTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::update_last_load_Exam_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_Update_Load_Exam_ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AC719A34-49BD-48A4-9DAB-600D5911B617}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_Update_Load_Exam_ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5218C8EF-AA78-456C-8ADB-AE69BECF2B5F}"
+          SQLTask:SqlStatementSource="select max(Exam_ID_FK) as update_last_load_Exam_ID&#xA;from[Exam_system_DWH].[dbo].[Fact_Students]"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="update_last_load_Exam_ID"
+            SQLTask:DtsVariableName="User::update_last_load_Exam_ID" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DC1192DA-38C0-49FD-B867-04FC28EF46AA}"
+      DTS:From="Package\SQL_Last_Load_Exam_ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SQL_Last_Load_Date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{4B814A15-1925-4F93-9273-51976E1041A2}"
+      DTS:From="Package\SQL_Last_Load_Date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DFT_Fact_Students" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{07B565AC-ADF0-46A4-A6D6-ADDDE451E91D}"
+      DTS:From="Package\DFT_Fact_Students"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\SQL_Update_Load_Exam_ID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{B1D803CD-B3AD-4628-9B27-9060B9B45569}"
+      DTS:From="Package\SQL_Update_Load_Exam_ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\SQL_Update_Exam_Date" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\DFT_Fact_Students"
+          TopLeft="264.285714848309,210.294117462728" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\SQL_Last_Load_Date"
+          TopLeft="290.71428633314,122.352941069223" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\SQL_Last_Load_Exam_ID"
+          TopLeft="200.714286141554,43.5882352559109" />
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\SQL_Update_Load_Exam_ID"
+          TopLeft="304.285714933459,309.705882081472" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="300.314286141554,85.1882352559109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79.6000001915863,37.1647058133126"
+              Start="0,0"
+              End="79.6000001915863,29.6647058133126">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5823529066563" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5823529066563"
+                    Point2="0,18.5823529066563"
+                    Point3="4,18.5823529066563" />
+                  <mssgle:LineSegment
+                    End="75.6000001915863,18.5823529066563" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75.6000001915863,18.5823529066563"
+                    Point2="79.6000001915863,18.5823529066563"
+                    Point3="79.6000001915863,22.5823529066563" />
+                  <mssgle:LineSegment
+                    End="79.6000001915863,29.6647058133126" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="379.91428633314,163.952941069223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-30.8285714848311,46.3411763935044"
+              Start="0,0"
+              End="-30.8285714848311,38.8411763935044">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1705881967522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1705881967522"
+                    Point2="0,23.1705881967522"
+                    Point3="-4,23.1705881967522" />
+                  <mssgle:LineSegment
+                    End="-26.8285714848311,23.1705881967522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.8285714848311,23.1705881967522"
+                    Point2="-30.8285714848311,23.1705881967522"
+                    Point3="-30.8285714848311,27.1705881967522" />
+                  <mssgle:LineSegment
+                    End="-30.8285714848311,38.8411763935044" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="349.085714848309,251.894117462728">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.0000000851497,57.811764618744"
+              Start="0,0"
+              End="62.0000000851497,50.311764618744">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.905882309372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.905882309372"
+                    Point2="0,28.905882309372"
+                    Point3="4,28.905882309372" />
+                  <mssgle:LineSegment
+                    End="58.0000000851497,28.905882309372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.0000000851497,28.905882309372"
+                    Point2="62.0000000851497,28.905882309372"
+                    Point3="62.0000000851497,32.905882309372" />
+                  <mssgle:LineSegment
+                    End="62.0000000851497,50.311764618744" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\SQL_Update_Exam_Date"
+          TopLeft="253.571429111216,399.87058806571" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="411.085714933459,351.305882081472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.5142858222434,48.5647059842377"
+              Start="0,0"
+              End="-59.5142858222434,41.0647059842377">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2823529921189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2823529921189"
+                    Point2="0,24.2823529921189"
+                    Point3="-4,24.2823529921189" />
+                  <mssgle:LineSegment
+                    End="-55.5142858222434,24.2823529921189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.5142858222434,24.2823529921189"
+                    Point2="-59.5142858222434,24.2823529921189"
+                    Point3="-59.5142858222434,28.2823529921189" />
+                  <mssgle:LineSegment
+                    End="-59.5142858222434,41.0647059842377" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Fact_Students">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\DFT_Fact_Students\LKP_DateSK"
+          TopLeft="259.285714837666,201.117646882536" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\DFT_Fact_Students\LKP_Students"
+          TopLeft="232.142857637028,274.105882149842" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\DFT_Fact_Students\SRC_student"
+          TopLeft="271.428572006372,64.2352940613423" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\DFT_Fact_Students\DWH_Destination"
+          TopLeft="294.285714912171,591.941176211184" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\DFT_Fact_Students\LKP_Branches"
+          TopLeft="258.571429121859,352.27058799734" />
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\DFT_Fact_Students\LKP_Exams"
+          TopLeft="377.857143661501,510.011764470609" />
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\DFT_Fact_Students\LKP_Tracks"
+          TopLeft="324.285714976034,434.494117405753" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\DFT_Fact_Students\DRV_Source_system_code"
+          TopLeft="473.571429579538,116.999999897445" />
+        <EdgeLayout
+          Id="Package\DFT_Fact_Students.Paths[Lookup Match Output2]"
+          TopLeft="330.971429121859,393.87058799734">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59.3142858541743,40.6235294084132"
+              Start="0,0"
+              End="59.3142858541743,33.1235294084132">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.3117647042066" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.3117647042066"
+                    Point2="0,20.3117647042066"
+                    Point3="4,20.3117647042066" />
+                  <mssgle:LineSegment
+                    End="55.3142858541743,20.3117647042066" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.3142858541743,20.3117647042066"
+                    Point2="59.3142858541743,20.3117647042066"
+                    Point3="59.3142858541743,24.3117647042066" />
+                  <mssgle:LineSegment
+                    End="59.3142858541743,33.1235294084132" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-18.5342437916629,25.3117647042066,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Fact_Students.Paths[Lookup Match Output1]"
+          TopLeft="303.742857637028,315.705882149842">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.228571484831,36.5647058474976"
+              Start="0,0"
+              End="27.228571484831,29.0647058474976">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.2823529237488" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.2823529237488"
+                    Point2="0,18.2823529237488"
+                    Point3="4,18.2823529237488" />
+                  <mssgle:LineSegment
+                    End="23.228571484831,18.2823529237488" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.228571484831,18.2823529237488"
+                    Point2="27.228571484831,18.2823529237488"
+                    Point3="27.228571484831,22.2823529237488" />
+                  <mssgle:LineSegment
+                    End="27.228571484831,29.0647058474976" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.5771009763345,23.2823529237488,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Fact_Students.Paths[Lookup Match Output]"
+          TopLeft="327.285714837666,242.717646882536">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.5428572006372,31.3882352673059"
+              Start="0,0"
+              End="-23.5428572006372,23.8882352673059">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.6941176336529" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.6941176336529"
+                    Point2="0,15.6941176336529"
+                    Point3="-4,15.6941176336529" />
+                  <mssgle:LineSegment
+                    End="-19.5428572006372,15.6941176336529" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.5428572006372,15.6941176336529"
+                    Point2="-23.5428572006372,15.6941176336529"
+                    Point3="-23.5428572006372,19.6941176336529" />
+                  <mssgle:LineSegment
+                    End="-23.5428572006372,23.8882352673059" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-59.9628153190686,20.6941176336529,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Fact_Students.Paths[Derived Column Output]"
+          TopLeft="575.171429579538,158.599999897445">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-247.885714741872,42.5176469850911"
+              Start="0,0"
+              End="-247.885714741872,35.0176469850911">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2588234925455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2588234925455"
+                    Point2="0,21.2588234925455"
+                    Point3="-4,21.2588234925455" />
+                  <mssgle:LineSegment
+                    End="-243.885714741872,21.2588234925455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-243.885714741872,21.2588234925455"
+                    Point2="-247.885714741872,21.2588234925455"
+                    Point3="-247.885714741872,25.2588234925455" />
+                  <mssgle:LineSegment
+                    End="-247.885714741872,35.0176469850911" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Fact_Students.Paths[OLE DB Source Output]"
+          TopLeft="409.828572006372,85.0352940613423">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.7428575731664,52.7647058361027"
+              Start="0,0"
+              End="56.2428575731664,52.7647058361027">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.8714287865832,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.8714287865832,0"
+                    Point2="31.8714287865832,0"
+                    Point3="31.8714287865832,4" />
+                  <mssgle:LineSegment
+                    End="31.8714287865832,48.7647058361027" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.8714287865832,48.7647058361027"
+                    Point2="31.8714287865832,52.7647058361027"
+                    Point3="35.8714287865832,52.7647058361027" />
+                  <mssgle:LineSegment
+                    End="56.2428575731664,52.7647058361027" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Fact_Students.Paths[Lookup Match Output4]"
+          TopLeft="443.857143661501,551.611764470609">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-69.17142874933,40.3294117405756"
+              Start="0,0"
+              End="-69.17142874933,32.8294117405756">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.1647058702878" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.1647058702878"
+                    Point2="0,20.1647058702878"
+                    Point3="-4,20.1647058702878" />
+                  <mssgle:LineSegment
+                    End="-65.17142874933,20.1647058702878" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-65.17142874933,20.1647058702878"
+                    Point2="-69.17142874933,20.1647058702878"
+                    Point3="-69.17142874933,24.1647058702878" />
+                  <mssgle:LineSegment
+                    End="-69.17142874933,32.8294117405756" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-82.777101093415,25.1647058702878,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Fact_Students.Paths[Lookup Match Output3]"
+          TopLeft="390.285714976034,476.094117405753">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.5714286854679,33.9176470648561"
+              Start="0,0"
+              End="53.5714286854679,26.4176470648561">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.958823532428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.958823532428"
+                    Point2="0,16.958823532428"
+                    Point3="4,16.958823532428" />
+                  <mssgle:LineSegment
+                    End="49.5714286854679,16.958823532428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.5714286854679,16.958823532428"
+                    Point2="53.5714286854679,16.958823532428"
+                    Point3="53.5714286854679,20.958823532428" />
+                  <mssgle:LineSegment
+                    End="53.5714286854679,26.4176470648561" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.4056723760161,21.958823532428,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Fact_Students\LKP_DateSK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Fact_Students\LKP_Students">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Fact_Students\SRC_student">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Fact_Students\DWH_Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Fact_Students\LKP_Branches">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Fact_Students\LKP_Exams">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Fact_Students\LKP_Tracks">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
